@@ -1,1 +1,18 @@
+// calculo de desconto
 
+<ion-content [fullscreen]="true">
+<ion-alert
+trigger="selecionar-desconto"
+header="Desconto escolhido"
+message={{descontoEscolhido}}
+[buttons]="alertButtons"
+></ion-alert>
+  
+<ion-radio-group value="desconto" [(ngModel)]="desconto">
+<ion-radio value="cinco">Credito a vista, 5% de desconto</ion-radio><br />
+<ion-radio value="sem">Credito parcelado, sem desconto</ion-radio><br />
+<ion-radio value="quinze">Pix, 15% de desconto</ion-radio><br />
+</ion-radio-group>
+<ion-button expand="block" id="selecionar-desconto"
+(click)="verificar()">Verificar</ion-button>
+</ion-content
